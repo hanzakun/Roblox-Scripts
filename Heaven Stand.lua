@@ -1,13 +1,350 @@
-local v0=string.char;local v1=string.byte;local v2=string.sub;local v3=bit32 or bit ;local v4=v3.bxor;local v5=table.concat;local v6=table.insert;local function v7(v24,v25)local v26={};for v41=1, #v24 do v6(v26,v0(v4(v1(v2(v24,v41,v41 + 1 )),v1(v2(v25,1 + (v41% #v25) ,1 + (v41% #v25) + 1 )))%256 ));end return v5(v26);end local v8=tonumber;local v9=string.byte;local v10=string.char;local v11=string.sub;local v12=string.gsub;local v13=string.rep;local v14=table.concat;local v15=table.insert;local v16=math.ldexp;local v17=getfenv or function()return _ENV;end ;local v18=setmetatable;local v19=pcall;local v20=select;local v21=unpack or table.unpack ;local v22=tonumber;local function v23(v27,v28,...)local v29=1;local v30;v27=v12(v11(v27,5),v7("\7\99","\176\41\77\46\231\131\38"),function(v42)if (v9(v42,2)==79) then local v90=0;while true do if (v90==0) then v30=v8(v11(v42,1,1));return "";end end else local v91=0;local v92;while true do if (v91==0) then v92=v10(v8(v42,16));if v30 then local v123=v13(v92,v30);v30=nil;return v123;else return v92;end break;end end end end);local function v31(v43,v44,v45)if v45 then local v93=0;local v94;while true do if (v93==0) then v94=(v43/((5 -3)^(v44-1)))%(2^(((v45-1) -(v44-1)) + 1)) ;return v94-(v94%1) ;end end else local v95=0;local v96;while true do if (0==v95) then v96=2^(v44-1) ;return (((v43%(v96 + v96))>=v96) and 1) or (0 -0) ;end end end end local function v32()local v46=0;local v47;while true do if (v46==1) then return v47;end if (0==v46) then v47=v9(v27,v29,v29);v29=v29 + 1 ;v46=1;end end end local function v33()local v48=0;local v49;local v50;while true do if (v48==0) then v49,v50=v9(v27,v29,v29 + 2 );v29=v29 + 2 ;v48=1;end if (v48==1) then return (v50 * 256) + v49 ;end end end local function v34()local v51=0;local v52;local v53;local v54;local v55;while true do if (v51==1) then return (v55 * 16777216) + (v54 * (168813 -103277)) + (v53 * 256) + v52 ;end if (v51==0) then v52,v53,v54,v55=v9(v27,v29,v29 + 3 );v29=v29 + (7 -3) ;v51=1;end end end local function v35()local v56=0;local v57;local v58;local v59;local v60;local v61;local v62;while true do if (1==v56) then v59=1;v60=(v31(v58,1,20) * (2^32)) + v57 ;v56=2;end if (v56==0) then v57=v34();v58=v34();v56=1;end if (v56==2) then v61=v31(v58,21,31);v62=((v31(v58,32)==1) and  -1) or 1 ;v56=3;end if (v56==3) then if (v61==0) then if (v60==0) then return v62 * 0 ;else local v124=0;while true do if (v124==0) then v61=1;v59=0;break;end end end elseif (v61==2047) then return ((v60==0) and (v62 * ((620 -(555 + 64))/0))) or (v62 * NaN) ;end return v16(v62,v61-1023 ) * (v59 + (v60/((933 -(857 + 74))^52))) ;end end end local function v36(v63)local v64=0;local v65;local v66;while true do if (v64==0) then v65=nil;if  not v63 then local v116=0;while true do if (v116==0) then v63=v34();if (v63==0) then return "";end break;end end end v64=1;end if (v64==2) then v66={};for v100=1, #v65 do v66[v100]=v10(v9(v11(v65,v100,v100)));end v64=3;end if (v64==1) then v65=v11(v27,v29,(v29 + v63) -(569 -(367 + 201)) );v29=v29 + v63 ;v64=2;end if (v64==3) then return v14(v66);end end end local v37=v34;local function v38(...)return {...},v20("#",...);end local function v39()local v67={};local v68={};local v69={};local v70={v67,v68,nil,v69};local v71=v34();local v72={};for v81=1,v71 do local v82=v32();local v83;if (v82==(1 + 0)) then v83=v32()~=0 ;elseif (v82==2) then v83=v35();elseif (v82==3) then v83=v36();end v72[v81]=v83;end v70[1 + 2 ]=v32();for v85=1,v34() do local v86=0;local v87;while true do if (v86==0) then v87=v32();if (v31(v87,1,1)==0) then local v119=0;local v120;local v121;local v122;while true do if (v119==0) then v120=v31(v87,2,3);v121=v31(v87,881 -(282 + 595) ,6);v119=1;end if (v119==3) then if (v31(v121,3,3)==1) then v122[4]=v72[v122[4]];end v67[v85]=v122;break;end if (v119==1) then v122={v33(),v33(),nil,nil};if (v120==(1637 -(1523 + 114))) then local v134=0;while true do if (v134==0) then v122[3]=v33();v122[4]=v33();break;end end elseif (v120==1) then v122[3 + 0 ]=v34();elseif (v120==(2 -0)) then v122[3]=v34() -(2^16) ;elseif (v120==3) then v122[3]=v34() -(2^16) ;v122[4]=v33();end v119=2;end if (2==v119) then if (v31(v121,1,1066 -(68 + 997) )==(1271 -(226 + 1044))) then v122[8 -6 ]=v72[v122[2]];end if (v31(v121,2,2)==1) then v122[3]=v72[v122[3]];end v119=3;end end end break;end end end for v88=1,v34() do v68[v88-1 ]=v39();end return v70;end local function v40(v74,v75,v76)local v77=0;local v78;local v79;local v80;while true do if (v77==0) then v78=v74[1];v79=v74[2];v77=1;end if (v77==1) then v80=v74[3];return function(...)local v102=v78;local v103=v79;local v104=v80;local v105=v38;local v106=1;local v107= -1;local v108={};local v109={...};local v110=v20("#",...) -1 ;local v111={};local v112={};for v117=0,v110 do if (v117>=v104) then v108[v117-v104 ]=v109[v117 + 1 ];else v112[v117]=v109[v117 + (118 -(32 + 85)) ];end end local v113=(v110-v104) + 1 ;local v114;local v115;while true do local v118=0;while true do if (v118==0) then v114=v102[v106];v115=v114[1];v118=1;end if (v118==1) then if (v115<=11) then if (v115<=5) then if (v115<=(2 + 0)) then if (v115<=0) then local v143=0;local v144;local v145;local v146;local v147;local v148;while true do if (v143==1) then v112[v114[2]]=v76[v114[3]];v106=v106 + 1 ;v114=v102[v106];v148=v114[1 + 1 ];v143=2;end if (v143==0) then v144=nil;v145,v146=nil;v147=nil;v148=nil;v143=1;end if (v143==5) then for v252=v148,v107 do local v253=0;while true do if (v253==0) then v144=v144 + 1 ;v112[v252]=v145[v144];break;end end end v106=v106 + (1 -0) ;v114=v102[v106];v148=v114[2];v143=6;end if (v143==4) then v148=v114[2];v145,v146=v105(v112[v148](v21(v112,v148 + 1 ,v114[3])));v107=(v146 + v148) -1 ;v144=0;v143=5;end if (v143==3) then v114=v102[v106];v112[v114[2]]=v114[3];v106=v106 + (2 -1) ;v114=v102[v106];v143=4;end if (v143==2) then v147=v112[v114[3]];v112[v148 + 1 ]=v147;v112[v148]=v147[v114[961 -(892 + 65) ]];v106=v106 + 1 ;v143=3;end if (7==v143) then v106=v106 + 1 ;v114=v102[v106];v106=v114[3];break;end if (v143==6) then v112[v148]=v112[v148](v21(v112,v148 + (1 -0) ,v107));v106=v106 + 1 ;v114=v102[v106];v112[v114[2]]();v143=7;end end elseif (v115>1) then local v176=0;local v177;while true do if (v176==0) then v177=v114[2];do return v21(v112,v177,v107);end break;end end else local v178=v114[2];v112[v178]=v112[v178](v21(v112,v178 + 1 ,v107));end elseif (v115<=3) then v106=v114[3];elseif (v115>4) then do return v112[v114[2]]();end else v112[v114[2]]();end elseif (v115<=(358 -(87 + 263))) then if (v115<=(186 -(67 + 113))) then do return;end elseif (v115>7) then local v180=0;local v181;local v182;while true do if (v180==1) then for v285=v181 + 1 + 0 ,v107 do v15(v182,v112[v285]);end break;end if (v180==0) then v181=v114[2];v182=v112[v181];v180=1;end end else v112[v114[4 -2 ]]=v76[v114[3]];end elseif (v115<=9) then local v150=0;local v151;local v152;while true do if (v150==0) then v151=v114[2];v152=v112[v114[3 + 0 ]];v150=1;end if (v150==1) then v112[v151 + 1 ]=v152;v112[v151]=v152[v114[4]];break;end end elseif (v115==10) then v112[v114[2]]=v112[v114[3]];else v112[v114[2]]=v75[v114[3]];end elseif (v115<=(67 -50)) then if (v115<=(966 -(802 + 150))) then if (v115<=12) then local v153=v103[v114[3]];local v154;local v155={};v154=v18({},{[v7("\107\137\184\180\80\179\169","\218\52\214\209")]=function(v164,v165)local v166=0;local v167;while true do if (v166==0) then v167=v155[v165];return v167[1][v167[2]];end end end,[v7("\40\14\166\75\0\56\166\74\18\41","\46\119\81\200")]=function(v168,v169,v170)local v171=0;local v172;while true do if (v171==0) then v172=v155[v169];v172[1][v172[2]]=v170;break;end end end});for v173=1,v114[4] do local v174=0;local v175;while true do if (v174==0) then v106=v106 + 1 ;v175=v102[v106];v174=1;end if (v174==1) then if (v175[1]==10) then v155[v173-1 ]={v112,v175[3]};else v155[v173-1 ]={v75,v175[3]};end v111[ #v111 + 1 ]=v155;break;end end end v112[v114[2]]=v40(v153,v154,v76);elseif (v115>13) then v112[v114[2]]=v114[7 -4 ];else local v191=0;local v192;while true do if (v191==0) then v192=v114[2];do return v112[v192](v21(v112,v192 + (1 -0) ,v114[3]));end break;end end end elseif (v115<=15) then local v157=0;local v158;local v159;local v160;local v161;while true do if (v157==6) then v106=v106 + 1 + 0 ;v114=v102[v106];v161=v114[2];v157=7;end if (v157==0) then v158=nil;v159,v160=nil;v161=nil;v157=1;end if (v157==5) then v107=(v160 + v161) -1 ;v158=0;for v259=v161,v107 do local v260=0;while true do if (0==v260) then v158=v158 + 1 ;v112[v259]=v159[v158];break;end end end v157=6;end if (v157==2) then v161=v114[2];v112[v161]=v112[v161](v21(v112,v161 + 1 ,v114[3]));v106=v106 + (998 -(915 + 82)) ;v157=3;end if (v157==1) then v112[v114[2 + 0 ]]=v114[3];v106=v106 + 1 ;v114=v102[v106];v157=2;end if (3==v157) then v114=v102[v106];v112[v114[2]]=v114[3];v106=v106 + 1 ;v157=4;end if (v157==7) then v112[v161]=v112[v161](v21(v112,v161 + 1 ,v107));v106=v106 + 1 ;v114=v102[v106];v157=8;end if (4==v157) then v114=v102[v106];v161=v114[2];v159,v160=v105(v112[v161](v21(v112,v161 + (2 -1) ,v114[3])));v157=5;end if (8==v157) then if (v112[v114[2 -0 ]]==v114[4]) then v106=v106 + 1 ;else v106=v114[3];end break;end end elseif (v115==16) then local v193=v114[2];v112[v193]=v112[v193](v21(v112,v193 + 1 ,v114[1190 -(1069 + 118) ]));else for v247=v114[2],v114[3] do v112[v247]=nil;end end elseif (v115<=20) then if (v115<=18) then if v112[v114[2]] then v106=v106 + 1 ;else v106=v114[3];end elseif (v115>19) then if (v112[v114[2]]==v114[4]) then v106=v106 + 1 ;else v106=v114[3];end else v112[v114[2]]=v112[v114[3]][v114[4]];end elseif (v115<=22) then if (v115==21) then v112[v114[2]]=v40(v103[v114[3]],nil,v76);else v112[v114[4 -2 ]]={};end elseif (v115==23) then local v200=0;local v201;local v202;local v203;local v204;local v205;while true do if (v200==1) then v112[v114[2]]=v75[v114[3]];v106=v106 + 1 ;v114=v102[v106];v112[v114[2]]=v75[v114[3]];v200=2;end if (v200==8) then v205=v114[2];v201=v112[v205];for v288=v205 + 1 ,v107 do v15(v201,v112[v288]);end break;end if (v200==2) then v106=v106 + 1 ;v114=v102[v106];v112[v114[2]]=v75[v114[3]];v106=v106 + 1 ;v200=3;end if (v200==4) then v112[v114[2]]=v75[v114[6 -3 ]];v106=v106 + 1 ;v114=v102[v106];v112[v114[2]]=v112[v114[3]];v200=5;end if (v200==5) then v106=v106 + 1 ;v114=v102[v106];for v289=v114[2],v114[3] do v112[v289]=nil;end v106=v106 + 1 ;v200=6;end if (v200==3) then v114=v102[v106];v112[v114[2]]={};v106=v106 + 1 ;v114=v102[v106];v200=4;end if (v200==6) then v114=v102[v106];v205=v114[2];v203,v204=v105(v112[v205](v21(v112,v205 + 1 ,v114[3])));v107=(v204 + v205) -1 ;v200=7;end if (v200==7) then v202=0;for v291=v205,v107 do local v292=0;while true do if (v292==0) then v202=v202 + 1 ;v112[v291]=v203[v202];break;end end end v106=v106 + 1 + 0 ;v114=v102[v106];v200=8;end if (0==v200) then v201=nil;v202=nil;v203,v204=nil;v205=nil;v200=1;end end else local v206=v114[2];local v207,v208=v105(v112[v206](v21(v112,v206 + (1 -0) ,v114[3 + 0 ])));v107=(v208 + v206) -1 ;local v209=791 -(368 + 423) ;for v249=v206,v107 do v209=v209 + 1 ;v112[v249]=v207[v209];end end v106=v106 + 1 ;break;end end end end;end end end return v40(v39(),{},v28)(...);end v23(v7("\105\227\26\106\220\228\22\227\102\123\220\227\21\154\101\4\220\224\18\159\97\127\219\226\19\149\96\14\218\231\21\159\102\126\223\159\21\156\96\15\218\225\18\152\96\120\218\232\21\159\102\115\223\159\21\156\97\127\218\150\19\233\97\126\218\148\19\158\96\126\219\226\21\159\102\126\223\159\21\156\97\123\218\227\19\157\100\4\218\147\21\156\102\15\223\159\21\156\103\121\220\231\22\227\102\123\220\225\22\227\102\123\222\224\20\159\99\4\220\224\21\158\102\123\221\226\21\155\102\123\220\225\21\156\102\120\223\159\21\156\103\121\220\231\21\156\102\121\220\224\21\152\101\4\220\224\21\154\102\8\220\224\21\159\101\4\220\224\21\157\102\123\220\228\23\227\102\123\220\145\22\227\102\123\220\225\17\227\102\123\220\145\29\227\102\123\220\145\22\227\102\123\220\226\17\227\102\123\220\145\22\227\102\123\220\227\17\227\102\123\220\145\21\156\102\127\220\224\21\159\98\4\220\224\21\153\102\123\220\228\21\156\102\122\216\159\21\156\102\121\220\224\21\152\96\4\220\224\21\154\101\4\220\224\21\157\101\4\220\224\21\157\101\4\220\224\21\152\101\4\220\224\21\158\97\4\220\224\17\156\102\120\220\229\22\227\102\123\223\145\23\153\96\127\222\146\22\237\100\4\220\227\22\227\102\123\222\229\19\152\100\9\220\226\19\227\102\123\170\224\22\234\102\123\221\146\22\227\102\123\220\226\20\153\110\4\220\224\20\155\102\123\220\225\29\227\102\123\220\226\21\156\102\122\218\159\21\156\102\120\220\224\21\157\96\4\220\224\21\152\110\4\220\224\21\153\102\123\220\226\19\227\102\123\220\230\29\227\102\123\220\231\21\156\102\124\218\159\21\156\102\126\220\224\21\155\96\4\220\224\21\152\101\4\220\224\21\157\102\123\222\224\20\159\102\123\220\228\21\156\102\127\220\224\21\157\102\123\221\226\21\234\102\123\220\229\21\156\102\121\218\159\21\156\102\120\220\224\21\153\102\123\220\226\21\156\103\121\222\159\21\156\102\127\220\224\21\159\96\4\220\224\21\158\102\123\220\228\19\227\102\123\220\225\22\227\102\123\220\226\21\156\100\125\222\159\21\156\102\122\220\224\20\155\102\123\220\225\21\156\102\127\220\224\21\152\102\120\223\159\21\156\103\124\220\224\21\157\100\4\220\224\21\237\102\123\220\225\19\227\102\123\221\230\21\156\102\121\218\159\21\156\102\15\220\224\21\157\102\123\220\226\17\227\102\123\220\226\21\156\102\122\217\159\21\156\102\127\220\227\22\227\102\123\221\145\21\156\102\122\222\159\21\156\102\9\220\224\21\157\102\123\220\227\17\227\102\123\220\229\21\156\102\122\220\224\21\157\98\4\220\224\21\158\102\123\220\225\19\227\102\123\220\230\22\227\102\123\220\225\22\227\102\123\220\225\22\227\102\123\220\229\22\227\102\123\220\227\21\237\101\4\220\224\19\239\96\13\218\225\19\152\97\120\219\228\18\158\96\114\218\149\19\155\102\120\220\228\22\227\102\123\218\231\19\157\96\15\218\229\21\159\102\124\223\159\21\156\98\115\222\159\18\152\97\123\216\231\19\153\97\127\220\227\23\157\101\4\220\224\19\148\100\4\219\228\18\156\97\120\223\145\23\227\100\13\219\224\19\157\97\120\219\228\19\153\96\121\218\233\19\233\100\14\218\227\19\234\96\15\222\150\18\158\96\122\219\231\23\234\99\124\217\227\18\237\101\126\217\233\17\232\97\121\218\233\21\158\96\4\220\224\99\156\101\13\220\225\21\239\101\4\220\224\21\154\103\121\223\159\21\156\102\10\220\224\21\157\101\4\220\224\21\152\102\120\223\159\21\156\102\10\220\224\21\157\102\123\221\226\21\155\102\123\220\225\21\156\102\122\223\159\21\156\103\121\222\159\21\156\102\121\220\224\21\158\101\4\220\224\23\156\100\4\220\224\21\158\102\123\220\226\21\156\102\120\220\224\20\158\100\4\220\224\21\152\102\123\220\228\19\227\102\123\220\226\21\156\102\127\218\159\21\156\102\122\223\159\21\156\102\121\216\159\21\156\102\122\220\224\21\157\102\123\220\225\21\156\102\127\216\159\21\156\102\9\220\224\21\157\102\123\222\224\20\159\102\123\220\225\22\227\102\123\220\229\23\227\102\123\220\230\22\227\102\123\220\225\18\227\102\123","\208\37\172\86\75\236"),v17(),...);
--- ⚠️ WARNING: integrity protected!
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.9.12) ~  Much Love, Ferib 
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robojini/Tuturial_UI_Library/main/UI_Template_1"))()
 
-]]--
+local Window = Library.CreateLib(" ")
 
+local Tab = Window:NewTab("Player")
+
+local Section = Tab:NewSection("Movement")
+
+Section:NewSlider("WalkSpeed", " ", 250, 0, function(s)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Section:NewButton("Speed 50", " ", function()
+while wait() do
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
+end
+end)
+
+Section:NewButton("Inf Jump", " ", function()
+game:GetService("UserInputService").JumpRequest:connect(function()
+        game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")       
+    end)
+end)
+
+Section:NewButton("TP Tool", " ", function()
+mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "TP"
+tool.Activated:connect(function()
+local pos = mouse.Hit+Vector3.new(0,2.5,0)
+pos = CFrame.new(pos.X,pos.Y,pos.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+local Section = Tab:NewSection("Game")
+
+Section:NewButton("Reset Hability", " ", function()
+local Event = game:GetService("ReplicatedStorage")["Remote_Events"]["Delete_Ability"]
+Event:FireServer()
+end)
+
+local Section = Tab:NewSection("Body")
+Section:NewButton("Hide Skin", " ", function()
+for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+  if v.Name == 'Pants' or v.ClassName == "Accessory" or v.Name == 'Shirt' or v.Name == 'Title' then
+      v:Destroy()
+  end
+end
+end)
+
+
+local Tab = Window:NewTab("Chest Farm")
+
+local Section = Tab:NewSection("Afk")
+
+Section:NewButton("Chest: ON", " ", function()
+_G.ChestFarm = true --- turn this to false if you want to stop it
+while _G.ChestFarm do
+
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(448.528076171875, 793.897705078125, -989.0896606445312)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.ClassName == "MeshPart" and v:FindFirstChild("ClickDetector") then
+fireclickdetector(v.ClickDetector)
+end
+end
+
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(252.17657470703125, 793.8259887695312, -911.7916259765625)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.ClassName == "MeshPart" and v:FindFirstChild("ClickDetector") then
+fireclickdetector(v.ClickDetector)
+end
+end
+
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(312.3983459472656, 793.904541015625, -753.7711181640625)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.ClassName == "MeshPart" and v:FindFirstChild("ClickDetector") then
+fireclickdetector(v.ClickDetector)
+end
+end
+
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(416.4214172363281, 793.904541015625, -645.0692138671875)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.ClassName == "MeshPart" and v:FindFirstChild("ClickDetector") then
+fireclickdetector(v.ClickDetector)
+end
+end
+
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(525.9491577148438, 793.9046630859375, -242.3602752685547)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.ClassName == "MeshPart" and v:FindFirstChild("ClickDetector") then
+fireclickdetector(v.ClickDetector)
+end
+end
+
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(290.0567321777344, 793.904541015625, -224.78720092773438)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.ClassName == "MeshPart" and v:FindFirstChild("ClickDetector") then
+fireclickdetector(v.ClickDetector)
+end
+end
+end
+end)
+
+Section:NewButton("Chest: OFF", " ", function()
+_G.ChestFarm = false --- turn this to false if you want to stop it
+while _G.ChestFarm do
+
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(448.528076171875, 793.897705078125, -989.0896606445312)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.ClassName == "MeshPart" and v:FindFirstChild("ClickDetector") then
+fireclickdetector(v.ClickDetector)
+end
+end
+
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(252.17657470703125, 793.8259887695312, -911.7916259765625)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.ClassName == "MeshPart" and v:FindFirstChild("ClickDetector") then
+fireclickdetector(v.ClickDetector)
+end
+end
+
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(312.3983459472656, 793.904541015625, -753.7711181640625)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.ClassName == "MeshPart" and v:FindFirstChild("ClickDetector") then
+fireclickdetector(v.ClickDetector)
+end
+end
+
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(416.4214172363281, 793.904541015625, -645.0692138671875)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.ClassName == "MeshPart" and v:FindFirstChild("ClickDetector") then
+fireclickdetector(v.ClickDetector)
+end
+end
+
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(525.9491577148438, 793.9046630859375, -242.3602752685547)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.ClassName == "MeshPart" and v:FindFirstChild("ClickDetector") then
+fireclickdetector(v.ClickDetector)
+end
+end
+
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(290.0567321777344, 793.904541015625, -224.78720092773438)
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.ClassName == "MeshPart" and v:FindFirstChild("ClickDetector") then
+fireclickdetector(v.ClickDetector)
+end
+end
+end
+end)
+
+local Tab = Window:NewTab("Npc Locations")
+
+local Section = Tab:NewSection("Go To")
+
+Section:NewButton("Shop/Seller", " ", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(309.49957275390625, 793.7913818359375, -803.5040283203125)
+end)
+
+Section:NewButton("Genos", " ", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(422.41595458984375, 794.091064453125, -874.5062255859375)
+end)
+
+Section:NewButton("Pucci", " ", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(289.98175048828125, 793.825927734375, -897.5426635742188)
+end)
+
+Section:NewButton("Inosuke", " ", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(597.4403076171875, 794.937255859375, -417.1358947753906)
+end)
+
+local Tab = Window:NewTab("Buy/Sell")
+
+local Section = Tab:NewSection("Buy")
+
+Section:NewButton("Arrow -$250", " ", function()
+local A_1 = "Arrow"
+local A_2 = 
+{
+	["Price"] = 250, 
+	["Icon"] = "rbxassetid://12905279396"
+}
+local Event = game:GetService("ReplicatedStorage")["Remote_Events"].Shop
+Event:FireServer(A_1, A_2)
+end)
+
+Section:NewButton("Rokakaka -$250", " ", function()
+local A_1 = "Rokakaka"
+local A_2 = 
+{
+	["Price"] = 250, 
+	["Icon"] = "rbxassetid://6397031841"
+}
+local Event = game:GetService("ReplicatedStorage")["Remote_Events"].Shop
+Event:FireServer(A_1, A_2)
+end)
+
+local Section = Tab:NewSection("Sell")
+
+Section:NewButton("Arrow +$100", " ", function()
+local A_1 = "Arrow"
+local Event = game:GetService("ReplicatedStorage")["Remote_Events"].Seller
+Event:FireServer(A_1)
+end)
+
+Section:NewButton("Rokakaka +$100", " ", function()
+local A_1 = "Rokakaka"
+local Event = game:GetService("ReplicatedStorage")["Remote_Events"].Seller
+Event:FireServer(A_1)
+end)
+
+local Section = Tab:NewSection("Game")
+
+Section:NewButton("Reset Hability", " ", function()
+local Event = game:GetService("ReplicatedStorage")["Remote_Events"]["Delete_Ability"]
+Event:FireServer()
+end)
+
+local Tab = Window:NewTab("Storage")
+
+local Section = Tab:NewSection("Slots")
+
+Section:NewButton("Storage 1", " ", function()
+local A_1 = 1
+local Event = game:GetService("ReplicatedStorage")["Remote_Events"]["Ability_Storage"]
+Event:FireServer(A_1)
+end)
+
+Section:NewButton("Storage 2", " ", function()
+local A_1 = 2
+local Event = game:GetService("ReplicatedStorage")["Remote_Events"]["Ability_Storage"]
+Event:FireServer(A_1)
+end)
+
+Section:NewButton("Storage 3", " ", function()
+local A_1 = 3
+local Event = game:GetService("ReplicatedStorage")["Remote_Events"]["Ability_Storage"]
+Event:FireServer(A_1)
+end)
+
+Section:NewButton("Storage 4", " ", function()
+local A_1 = 4
+local Event = game:GetService("ReplicatedStorage")["Remote_Events"]["Ability_Storage"]
+Event:FireServer(A_1)
+end)
+
+Section:NewButton("Storage 5", " ", function()
+local A_1 = 5
+local Event = game:GetService("ReplicatedStorage")["Remote_Events"]["Ability_Storage"]
+Event:FireServer(A_1)
+end)
+
+Section:NewButton("Storage 6", " ", function()
+local A_1 = 6
+local Event = game:GetService("ReplicatedStorage")["Remote_Events"]["Ability_Storage"]
+Event:FireServer(A_1)
+end)
+
+local Tab = Window:NewTab("Misc")
+
+local Section = Tab:NewSection("Other")
+
+Section:NewButton("Boost Fps", " ", function()
+local a = game
+
+local b = a.Workspace
+
+local c = a.Lighting
+
+local d = b.Terrain
+
+d.WaterWaveSize = 0
+
+d.WaterWaveSpeed = 0
+
+d.WaterReflectance = 0
+
+d.WaterTransparency = 0
+
+c.GlobalShadows = false
+
+c.FogEnd = 9e9
+
+c.Brightness = 0
+
+settings().Rendering.QualityLevel = "Level01"
+
+local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
+local g = game
+local w = g.Workspace
+local l = g.Lighting
+local t = w.Terrain
+sethiddenproperty(l,"Technology",2)
+sethiddenproperty(t,"Decoration",false)
+t.WaterWaveSize = 0
+t.WaterWaveSpeed = 0
+t.WaterReflectance = 0
+t.WaterTransparency = 0
+l.GlobalShadows = false
+l.FogEnd = 9e9
+l.Brightness = 0
+settings().Rendering.QualityLevel = "Level01"
+for i, v in pairs(g:GetDescendants()) do
+    if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+    elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
+        v.Transparency = 1
+    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+        v.Lifetime = NumberRange.new(0)
+    elseif v:IsA("Explosion") then
+        v.BlastPressure = 1
+        v.BlastRadius = 1
+    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
+        v.Enabled = false
+    elseif v:IsA("MeshPart") then
+        v.Material = "SmoothPlastic"
+        v.Reflectance = 0
+        v.TextureID = 10385902758728957
+    end
+end
+for i, e in pairs(l:GetChildren()) do
+    if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+        e.Enabled = false
+    end
+end
+end)
+
+Section:NewButton("E To Fly", " ", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/N7S0FPAb"))()
+end)
+
+Section:NewButton("Infinity Yield", " ", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
