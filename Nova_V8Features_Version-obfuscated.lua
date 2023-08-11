@@ -1,5 +1,3 @@
---https://www.youtube.com/@demonicamente
-
 --[[
     Synapse Xen v1.1.2 by Synapse GP
     VM Hash: 70d4b8f72b8036130204daaf0030903e965908fdbc47e11630c3e4f54e8940d0
