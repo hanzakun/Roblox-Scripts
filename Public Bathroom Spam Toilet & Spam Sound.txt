@@ -1,0 +1,226 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robojini/Tuturial_UI_Library/main/UI_Template_1"))()
+
+local Window = Library.CreateLib(" ")
+
+local Tab = Window:NewTab("Player")
+
+local Section = Tab:NewSection("Game")
+
+Section:NewButton("Spam Toilet", " ", function()
+local LP = game.Players.LocalPlayer
+game.ReplicatedStorage.ToolEvents.TpRollEvent:FireServer()
+repeat wait() until LP.Character
+for i,v in pairs(LP.Backpack:GetChildren()) do
+   if v.Name == "TpRoll" then
+       v.Parent = LP.Character
+   end
+end
+while true do
+wait()
+for i,v in pairs (LP.Character:GetChildren()) do
+if v.Name == "TpRoll" then
+v:Activate()
+       end
+   end
+end
+end)
+
+Section:NewButton("Spam Sound", " ", function()
+while true do
+    wait(0.5)
+    for i, v in pairs(game.Workspace:GetDescendants()) do
+        if v:IsA("ClickDetector") then
+            fireclickdetector(v)
+        end
+    end
+end
+end)
+
+
+
+
+local Tab = Window:NewTab("Misc")
+
+local Section = Tab:NewSection("Other")
+
+Section:NewButton("Boost Fps", " ", function()
+local a = game
+
+local b = a.Workspace
+
+local c = a.Lighting
+
+local d = b.Terrain
+
+d.WaterWaveSize = 0
+
+d.WaterWaveSpeed = 0
+
+d.WaterReflectance = 0
+
+d.WaterTransparency = 0
+
+c.GlobalShadows = false
+
+c.FogEnd = 9e9
+
+c.Brightness = 0
+
+settings().Rendering.QualityLevel = "Level01"
+
+local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
+local g = game
+local w = g.Workspace
+local l = g.Lighting
+local t = w.Terrain
+sethiddenproperty(l,"Technology",2)
+sethiddenproperty(t,"Decoration",false)
+t.WaterWaveSize = 0
+t.WaterWaveSpeed = 0
+t.WaterReflectance = 0
+t.WaterTransparency = 0
+l.GlobalShadows = false
+l.FogEnd = 9e9
+l.Brightness = 0
+settings().Rendering.QualityLevel = "Level01"
+for i, v in pairs(g:GetDescendants()) do
+    if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+    elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
+        v.Transparency = 1
+    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+        v.Lifetime = NumberRange.new(0)
+    elseif v:IsA("Explosion") then
+        v.BlastPressure = 1
+        v.BlastRadius = 1
+    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
+        v.Enabled = false
+    elseif v:IsA("MeshPart") then
+        v.Material = "SmoothPlastic"
+        v.Reflectance = 0
+        v.TextureID = 10385902758728957
+    end
+end
+for i, e in pairs(l:GetChildren()) do
+    if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+        e.Enabled = false
+    end
+end
+end)
+
+Section:NewButton("Ctrl Delete", " ", function()
+loadstring(game:HttpGet('https://pastebin.com/raw/VBCANEbz'))()
+end)
+
+Section:NewButton("Infinity Yield", " ", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+Section:NewButton("Remote Spy", " ", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/Z9cG8qEJ"))()
+end)
+
+Section:NewButton("Xplorer", " ", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/1qi7bwHa"))()
+end)
+
+local Section = Tab:NewSection("Other")
+
+Section:NewButton("E To Black Hole", " ", function()
+local UserInputService = game:GetService("UserInputService")
+local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
+local Folder = Instance.new("Folder", game:GetService("Workspace"))
+local Part = Instance.new("Part", Folder)
+local Attachment1 = Instance.new("Attachment", Part)
+Part.Anchored = true
+Part.CanCollide = false
+Part.Transparency = 1
+local Updated = Mouse.Hit + Vector3.new(0, 5, 0)
+local NetworkAccess = coroutine.create(function()
+    settings().Physics.AllowSleep = false
+    while game:GetService("RunService").RenderStepped:Wait() do
+        for _, Players in next, game:GetService("Players"):GetPlayers() do
+            if Players ~= game:GetService("Players").LocalPlayer then
+                Players.MaximumSimulationRadius = 0 
+                sethiddenproperty(Players, "SimulationRadius", 0) 
+            end 
+        end
+        game:GetService("Players").LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)
+        setsimulationradius(math.huge) 
+    end 
+end) 
+coroutine.resume(NetworkAccess)
+local function ForcePart(v)
+    if v:IsA("Part") and v.Anchored == false and v.Parent:FindFirstChild("Humanoid") == nil and v.Parent:FindFirstChild("Head") == nil and v.Name ~= "Handle" then
+        Mouse.TargetFilter = v
+        for _, x in next, v:GetChildren() do
+            if x:IsA("BodyAngularVelocity") or x:IsA("BodyForce") or x:IsA("BodyGyro") or x:IsA("BodyPosition") or x:IsA("BodyThrust") or x:IsA("BodyVelocity") or x:IsA("RocketPropulsion") then
+                x:Destroy()
+            end
+        end
+        if v:FindFirstChild("Attachment") then
+            v:FindFirstChild("Attachment"):Destroy()
+        end
+        if v:FindFirstChild("AlignPosition") then
+            v:FindFirstChild("AlignPosition"):Destroy()
+        end
+        if v:FindFirstChild("Torque") then
+            v:FindFirstChild("Torque"):Destroy()
+        end
+        v.CanCollide = false
+        local Torque = Instance.new("Torque", v)
+        Torque.Torque = Vector3.new(100000, 100000, 100000)
+        local AlignPosition = Instance.new("AlignPosition", v)
+        local Attachment2 = Instance.new("Attachment", v)
+        Torque.Attachment0 = Attachment2
+        AlignPosition.MaxForce = 9999999999999999
+        AlignPosition.MaxVelocity = math.huge
+        AlignPosition.Responsiveness = 200
+        AlignPosition.Attachment0 = Attachment2 
+        AlignPosition.Attachment1 = Attachment1
+    end
+end
+for _, v in next, game:GetService("Workspace"):GetDescendants() do
+    ForcePart(v)
+end
+game:GetService("Workspace").DescendantAdded:Connect(function(v)
+    ForcePart(v)
+end)
+UserInputService.InputBegan:Connect(function(Key, Chat)
+    if Key.KeyCode == Enum.KeyCode.E and not Chat then
+       Updated = Mouse.Hit + Vector3.new(0, 5, 0)
+    end
+end)
+spawn(function()
+    while game:GetService("RunService").RenderStepped:Wait() do
+        Attachment1.WorldCFrame = Updated
+    end
+end)
+end)
+
+Section:NewButton("E To Fly", " ", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/N7S0FPAb"))()
+end)
+
+Section:NewButton("Item Alert", " ", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/cMSvmpJU"))()
+end)
+
+Section:NewButton("Hook", " ", function()
+g = hookfunction(wait, function(seconds)
+return g(0)
+end)
+end)
+
+Section:NewButton("R6 Animations", " ", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/yfuAmurM"))()
+end)
+
+Section:NewButton("R15 Animations", " ", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/e7Nwhp02"))()
+end)
+
+Section:NewButton("Hyper Total", " ", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/nucL1nkC"))()
+end)
