@@ -1,0 +1,246 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robojini/Tuturial_UI_Library/main/UI_Template_1"))()
+
+local Window = Library.CreateLib(" ")
+
+local Tab = Window:NewTab("Player")
+
+local Section = Tab:NewSection("Movement")
+Section:NewSlider("WalkSpeed", " ", 250, 0, function(s)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Section:NewSlider("JumpPower", " ", 250, 0, function(j)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = j
+end)
+
+Section:NewButton("Inf Jump", " ", function()
+game:GetService("UserInputService").JumpRequest:connect(function()
+        game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")       
+    end)
+end)
+
+Section:NewButton("TP Tool", " ", function()
+mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "TP"
+tool.Activated:connect(function()
+local pos = mouse.Hit+Vector3.new(0,2.5,0)
+pos = CFrame.new(pos.X,pos.Y,pos.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+local Section = Tab:NewSection("Attack & Def")
+Section:NewButton("+3000 Power", " ", function()
+game.Players.LocalPlayer.Power.Value = 3000
+end)
+
+Section:NewButton("INF Endurance", " ", function()
+local A_1 = 7
+local A_2 = game.Players.LocalPlayer.Character.Head
+local A_3 = CFrame.new(nil, nil, nil)
+local A_4 = 9e9
+local A_5 = game.Players.LocalPlayer.Character.Torso
+local A_6 = game.Workspace:WaitForChild("IWXVL").Humanoid
+local A_7 = false
+local Event = game:GetService("ReplicatedStorage").Logic.hitbox
+Event:InvokeServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
+end)
+
+local Section = Tab:NewSection("Killaura")
+Section:NewButton("Enable", " ", function()
+while wait() do
+local A_1 = "inf"
+local Event = game:GetService("ReplicatedStorage").Specials.throatslit
+Event:FireServer(A_1)
+end
+end)
+
+local Tab = Window:NewTab("Autofarm")
+
+local Section = Tab:NewSection("Morioh")
+Section:NewButton("Kill All Dummys", " ", function()
+local A_1 = 1
+local A_2 = game.Players.LocalPlayer.Character.Head
+local A_3 = CFrame.new()
+local A_4 = "inf"
+local A_5 = game.Players.LocalPlayer.Character.Torso
+local A_6 = game:GetService("Workspace")["Wood Dummy"].Humanoid
+local A_7 = false
+local Event = game:GetService("ReplicatedStorage").Logic.hitbox
+Event:InvokeServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
+local A_1 = 1
+local A_2 = game.Players.LocalPlayer.Character.Head
+local A_3 = CFrame.new()
+local A_4 = "inf"
+local A_5 = game.Players.LocalPlayer.Character.Torso
+local A_6 = game:GetService("Workspace")["Ice Dummy"].Humanoid
+local A_7 = false
+local Event = game:GetService("ReplicatedStorage").Logic.hitbox
+Event:InvokeServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
+local A_1 = 1
+local A_2 = game.Players.LocalPlayer.Character.Head
+local A_3 = CFrame.new()
+local A_4 = 9999999.8
+local A_5 = game.Players.LocalPlayer.Character.Torso
+local A_6 = game:GetService("Workspace")["Metal Dummy"].Humanoid
+local A_7 = false
+local Event = game:GetService("ReplicatedStorage").Logic.hitbox
+Event:InvokeServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
+local A_1 = 1
+local A_2 = game.Players.LocalPlayer.Character.Head
+local A_3 = CFrame.new()
+local A_4 = "inf"
+local A_5 = game.Players.LocalPlayer.Character.Torso
+local A_6 = game:GetService("Workspace")["Hyperspace Dummy"].Humanoid
+local A_7 = false
+local Event = game:GetService("ReplicatedStorage").Logic.hitbox
+Event:InvokeServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
+end)
+
+local Section = Tab:NewSection("Italy")
+Section:NewButton("Holy Dummy : ON", " ", function()
+_G.MoneyFarm = true --- turn this to false if you want to stop it
+while _G.MoneyFarm do
+wait()
+local A_1 = 1
+local A_2 = game.Players.LocalPlayer.Character.Head
+local A_3 = CFrame.new()
+local A_4 = "inf"
+local A_5 = game.Players.LocalPlayer.Character.Torso
+local A_6 = game:GetService("Workspace")["Holy Dummy"].Humanoid
+local A_7 = false
+local Event = game:GetService("ReplicatedStorage").Logic.hitbox
+Event:InvokeServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
+end
+end)
+
+Section:NewButton("Holy Dummy : OFF", " ", function()
+_G.MoneyFarm = false --- turn this to false if you want to stop it
+while _G.MoneyFarm do
+wait()
+local A_1 = 1
+local A_2 = game.Players.LocalPlayer.Character.Head
+local A_3 = CFrame.new()
+local A_4 = "inf"
+local A_5 = game.Players.LocalPlayer.Character.Torso
+local A_6 = game:GetService("Workspace")["Holy Dummy"].Humanoid
+local A_7 = false
+local Event = game:GetService("ReplicatedStorage").Logic.hitbox
+Event:InvokeServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
+end
+end)
+
+local Tab = Window:NewTab("Boss")
+
+local Section = Tab:NewSection("Morioh")
+
+Section:NewButton("Kill Kira", " ", function()
+local A_1 = 1
+local A_2 = game.Players.LocalPlayer.Character.Head
+local A_3 = CFrame.new()
+local A_4 = 9999999.8
+local A_5 = game.Players.LocalPlayer.Character.Torso
+local A_6 = game:GetService("Workspace")["Kira"].Humanoid
+local A_7 = false
+local Event = game:GetService("ReplicatedStorage").Logic.hitbox
+Event:InvokeServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
+end)
+
+Section:NewButton("Kill DIO's", " ", function()
+local A_1 = 1
+local A_2 = game.Players.LocalPlayer.Character.Head
+local A_3 = CFrame.new()
+local A_4 = 999999998
+local A_5 = game.Players.LocalPlayer.Character.Torso
+local A_6 = game:GetService("Workspace")["DIO"].Humanoid
+local A_7 = false
+local Event = game:GetService("ReplicatedStorage").Logic.hitbox
+Event:InvokeServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
+end)
+
+Section:NewButton("Kill Notorious B.I.G", " ", function()
+local A_1 = 1
+local A_2 = game.Players.LocalPlayer.Character.Head
+local A_3 = CFrame.new()
+local A_4 = 999999998
+local A_5 = game.Players.LocalPlayer.Character.Torso
+local A_6 = game:GetService("Workspace")["Notorious B.I.G"].Humanoid
+local A_7 = false
+local Event = game:GetService("ReplicatedStorage").Logic.hitbox
+Event:InvokeServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
+end)
+
+local Section = Tab:NewSection("Italy")
+
+Section:NewButton("Kill Diavolo", " ", function()
+local A_1 = 1
+local A_2 = game.Players.LocalPlayer.Character.Head
+local A_3 = CFrame.new()
+local A_4 = 9999999.8
+local A_5 = game.Players.LocalPlayer.Character.Torso
+local A_6 = game:GetService("Workspace")["Diavolo"].Humanoid
+local A_7 = false
+local Event = game:GetService("ReplicatedStorage").Logic.hitbox
+Event:InvokeServer(A_1, A_2, A_3, A_4, A_5, A_6, A_7)
+end)
+
+local Tab = Window:NewTab("Shop")
+local Section = Tab:NewSection("Buy")
+Section:NewButton("Stand Arrow", " ", function()
+game.ReplicatedStorage.Logic.giveitem:FireServer("StandArrow")
+end)
+
+Section:NewButton("Rokakaka Fruit", " ", function()
+game.ReplicatedStorage.Logic.giveitem:FireServer("RokakakaFruit")
+end)
+
+local Section = Tab:NewSection("Special")
+
+Section:NewButton("Lucky Stand Arrow", " ", function()
+game.ReplicatedStorage.Logic.giveitem:FireServer("LuckyStandArrow")
+end)
+
+local Section = Tab:NewSection("Stuff")
+
+Section:NewButton("Dang", " ", function()
+game.ReplicatedStorage.Logic.giveitem:FireServer("StandArrow")
+game.ReplicatedStorage.Logic.giveitem:FireServer("RokakakaFruit")
+game.ReplicatedStorage.Logic.giveitem:FireServer("StandArrow")
+game.ReplicatedStorage.Logic.giveitem:FireServer("RokakakaFruit")
+game.ReplicatedStorage.Logic.giveitem:FireServer("StandArrow")
+game.ReplicatedStorage.Logic.giveitem:FireServer("RokakakaFruit")
+game.ReplicatedStorage.Logic.giveitem:FireServer("StandArrow")
+game.ReplicatedStorage.Logic.giveitem:FireServer("RokakakaFruit")
+game.ReplicatedStorage.Logic.giveitem:FireServer("StandArrow")
+game.ReplicatedStorage.Logic.giveitem:FireServer("RokakakaFruit")
+game.ReplicatedStorage.Logic.giveitem:FireServer("StandArrow")
+game.ReplicatedStorage.Logic.giveitem:FireServer("RokakakaFruit")
+game.ReplicatedStorage.Logic.giveitem:FireServer("StandArrow")
+game.ReplicatedStorage.Logic.giveitem:FireServer("RokakakaFruit")
+game.ReplicatedStorage.Logic.giveitem:FireServer("StandArrow")
+game.ReplicatedStorage.Logic.giveitem:FireServer("RokakakaFruit")
+game.ReplicatedStorage.Logic.giveitem:FireServer("StandArrow")
+game.ReplicatedStorage.Logic.giveitem:FireServer("RokakakaFruit")
+game.ReplicatedStorage.Logic.giveitem:FireServer("StandArrow")
+game.ReplicatedStorage.Logic.giveitem:FireServer("RokakakaFruit")
+end)
+
+local Tab = Window:NewTab("Misc")
+
+local Section = Tab:NewSection("Other")
+
+Section:NewButton("Ctrl Delete", " ", function()
+loadstring(game:HttpGet('https://pastebin.com/raw/VBCANEbz'))()
+end)
+
+Section:NewButton("Infinity Yield", " ", function()
+--by Nicuse#6163
+loadstring(game:HttpGet('https://pastebin.com/raw/Sgi947JE'))()
+end)
+
+Section:NewButton("Item Alert", " ", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/cMSvmpJU"))()
+end)
